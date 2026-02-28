@@ -49,7 +49,7 @@ class NetworkDataExtract():
             raise NetworkSecurityException(e,sys) 
         
 if __name__=='__main__':
-    FILE_PATH="Network_Data\Dataset Phising Website.csv"
+    FILE_PATH="Network_Data\phishingData.csv"
     DATABASE="KRISHAI"
     Collection="NetworkData"
     networkobj=NetworkDataExtract()
