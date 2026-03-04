@@ -1,2 +1,6 @@
 venv
+mlruns/
+Artifacts/
+logs/
+venv/
 .env

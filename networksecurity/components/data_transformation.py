@@ -54,7 +54,7 @@ class DataTransformation:
            processor:Pipeline=Pipeline([("imputer",imputer)])
            return processor
         except Exception as e:
-            raise NetwrokSecurityException(e,sys)
+            raise NetworkSecurityException(e,sys)
 
     def initiate_data_transformation(self)->DataTransformationArtifact:
         logging.info("Entered initiate_data_transformation method of DataTransformation class")
