@@ -38,17 +38,18 @@ class NetworkDataExtract():
             self.collection=collection
             self.records=records
 
-            self.mongo_client=pymongo.MongoClient(MONGO_DB_URL)
+            self.mongo_client = pymongo.MongoClient(MONGO_DB_URL, tlsCAFile=ca)       
             self.database = self.mongo_client[self.database]
 
             self.collection = self.database[self.collection]
+            self.collection.delete_many({})
             self.collection.insert_many(self.records)
             return(len(self.records))
         except Exception as e:
             raise NetworkSecurityException(e,sys) 
         
 if __name__=='__main__':
-    FILE_PATH="Network_Data\phishingData.csv"
+    FILE_PATH="Network_Data/phisingData.csv"
     DATABASE="KRISHAI"
     Collection="NetworkData"
     networkobj=NetworkDataExtract()
