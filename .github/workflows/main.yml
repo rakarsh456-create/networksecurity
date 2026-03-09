@@ -72,7 +72,7 @@ jobs:
 
             - name: Deploy to Amazon ECR
               id: login-ecr
-              uses: aws-actions/amazon-ecr-login@v1
+              uses: aws-actions/amazon-ecr-login@v1 
 
             - name: Pull latest images
               run: |
