@@ -25,8 +25,9 @@ from sklearn.ensemble import (
 )
 import mlflow
 
-#import dagshub
-#dagshub.init(repo_owner='rakarsh456-create', repo_name='networksecurity', mlflow=True)
+if os.getenv("ENABLE_DAGSHUB") == "1":
+    import dagshub
+    dagshub.init(repo_owner='rakarsh456-create', repo_name='networksecurity', mlflow=True)
 
 
 class ModelTrainer:
