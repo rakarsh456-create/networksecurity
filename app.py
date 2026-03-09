@@ -48,7 +48,6 @@ templates = Jinja2Templates(directory="./templates")
 async def index():
     return RedirectResponse(url="/docs")
 
-
 @app.get("/train")
 async def train_route():
     try:
